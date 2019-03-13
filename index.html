@@ -6,133 +6,91 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lilita+One" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"></link>
     <title>Train Schedule</title>
 </head>
-<body>
-    <div id="header" style="text-align: center; background-color: pink">
+<body style="background-color: pink">
+    <div id="header" style="text-align: center; background-color: palevioletred">
         <h1>Time for Train</h1>
         <p>Choo choo it's train time chee chee. </p>
     </div>
-
 </div>
 
 <div class="row">
     <div class="col-12">
-        <div class="card" style="background-color: #D6EAF8" id="reviewsHeading">
+        <div class="card" style="background-color: palevioletred" id="reviewsHeading">
             <div class="card-body" style="text-align: center">
                 <h2>
-                    Train Scheule:</h2>
+                    Current Train Scheule:</h2>
             </div>
         </div>
     </div>
 </div>
 
-<table class="table table-hover" style="background-color:#EAF2F8" id="reviews">
+<table class="table table-hover" style="background-color: lightpink" id="reviews">
     <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">User:</th>
-            <th scope="col">Location Name:</th>
-            <th scope="col">Type:</th>
-            <th scope="col">Address:</th>
-            <th scope="col">Comments:</th>
+            <th scope="col">Train Time</th>
+            <th scope="col">Destination:</th>
+            <th scope="col">Frequency (min):</th>
+            <th scope="col">Next Arrival:</th>
+            <th scope="col">Minutes AWay:</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <th scope="row">1</th>
-            <td>Drew</td>
-            <td>Drew Park</td>
-            <td>Playground/Park</td>
-            <td>123 University Ave, Berkeley, CA</td>
-            <td>This is a very clean and safe park with ample parking!</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Roger</td>
-            <td>Berkeley Library</td>
-            <td>Baby-Changing Station, Parking</td>
-            <td>123 University Ave, Berkeley, CA</td>
-            <td>This is a very clean and safe park with ample parking!</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Kit</td>
-            <td>Blue Bottle Coffee</td>
-            <td>Family-Friendly Atmosphere</td>
-            <td>123 University Ave, Berkeley, CA</td>
-            <td>This is a very clean and safe park with ample parking!</td>
-        </tr>
-        <tr>
-            <th scope="row">4</th>
-            <td>Isaac</td>
-            <td>UC Berkeley Extension</td>
-            <td>Parking, Family-Friendly Atmosphere</td>
-            <td>123 University Ave, Berkeley, CA</td>
-            <td>This is a very clean and safe park with ample parking!</td>
+            <td>5:00</td>
+            <td>Berkeley, CA</td>
+            <td>5 Mins</td>
+            <td>5:05</td>
+            <td>5 Mins</td>
         </tr>
     </tbody>
 </table>
 
 <div class="row mt-3">
         <div class="col-12">
-            <div class="card" style="background-color: #D6EAF8" id="reviewsHeading">
+            <div class="card" style="background-color: palevioletred" id="reviewsHeading">
                 <div class="card-body" style="text-align: center">
                     <h2>
-                       Add Train::</h2>
+                       Add Train:</h2>
                 </div>
             </div>
         </div>
     </div>
     
-    <table class="table table-hover" style="background-color:#EAF2F8" id="reviews">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">User:</th>
-                <th scope="col">Location Name:</th>
-                <th scope="col">Type:</th>
-                <th scope="col">Address:</th>
-                <th scope="col">Comments:</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Drew</td>
-                <td>Drew Park</td>
-                <td>Playground/Park</td>
-                <td>123 University Ave, Berkeley, CA</td>
-                <td>This is a very clean and safe park with ample parking!</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Roger</td>
-                <td>Berkeley Library</td>
-                <td>Baby-Changing Station, Parking</td>
-                <td>123 University Ave, Berkeley, CA</td>
-                <td>This is a very clean and safe park with ample parking!</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Kit</td>
-                <td>Blue Bottle Coffee</td>
-                <td>Family-Friendly Atmosphere</td>
-                <td>123 University Ave, Berkeley, CA</td>
-                <td>This is a very clean and safe park with ample parking!</td>
-            </tr>
-            <tr>
-                <th scope="row">4</th>
-                <td>Isaac</td>
-                <td>UC Berkeley Extension</td>
-                <td>Parking, Family-Friendly Atmosphere</td>
-                <td>123 University Ave, Berkeley, CA</td>
-                <td>This is a very clean and safe park with ample parking!</td>
-            </tr>
-        </tbody>
-    </table>
-
-</nav>
+    <div class="container">
+            <div class="row mb-3">
+                <div class="col-12">
+                    <label for="usr">Train Time:</label>
+                    <input type="text" class="form-control" id="usr">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12">
+                    <label for="usr">Destination:</label>
+                    <input type="text" class="form-control" id="usr">
+                </div>
+            </div>
+            <div class="row mb-3">
+                    <div class="col-12">
+                        <label for="usr">First Train Time:</label>
+                        <input type="text" class="form-control" id="usr">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                        <div class="col-12">
+                            <label for="usr">Frequency (mins):</label>
+                            <input type="text" class="form-control" id="usr">
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-dark  btn-block"
+                                    id="submit" style="background-color: magenta">Submit</button>
+                            </div>
+                        </div>
 </div>
 
 
