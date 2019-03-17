@@ -1,4 +1,116 @@
+
 <!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Trains</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <!-- Moment.js Reference -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <!--New firebase Reference:-->
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+  <style>
+    #employee-table th,
+    td {
+      display: inline-block;
+      width: 16.575%;
+    }
+  </style>
+</head>
+
+<body style="background-color: lightpink">
+
+  <!-- Employee Tracker -->
+  <div class="container" style="background-color: peachpuff">
+
+    <!-- Jumbotron -->
+    <div class="jumbotron" style="background-color: palevioletred; color: white">
+      <h1 class="text-center">Time for Trains</h1>
+      <h3 class="text-center">Choo choo and chee chee.</h3>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <!-- Current Employees-->
+        <div class="card mb-4">
+          <div class="card-header" style="background-color: lightpink">Current Train Schedule:</div>
+          <div class="card-body" style="background-color: lightskyblue">
+            <table class="table table-sm table-hover" id='currentSchedule' style="background-color: lightgrey">
+              <thead>
+                <tr>
+                  <th scope="col">Train Time:</th>
+                  <th scope="col">Destination:</th>
+                  <th scope="col">Frequency (min):</th>
+                  <th scope="col">Next Arrival:</th>
+                  <th scope="col">Minutes Away:</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Add Employee  -->
+        <div class="card mb-4" style="background-color: rebeccapurple">
+          <div class="card-header">Add Train Time</div>
+          <div class="card-body">
+
+            <!-- Entry Form -->
+            <form>
+              <div class="form-group">
+                <label for="employee-name-input">Train Name:</label>
+                <input class="form-control" id="train-input" placeholder="Jane Doe" type="text">
+              </div>
+              <div class="form-group">
+                <label for="role-input">Destination:</label>
+                <input class="form-control" id="destination-input" placeholder="CEO" type="text">
+              </div>
+              <div class="form-group">
+                <label for="start-input">First Train Time:</label>
+                <input class="form-control" id="time-input" placeholder="01/08/1989" type="text">
+              </div>
+              <div class="form-group">
+                <label for="rate-input">Frequency:</label>
+                <input class="form-control" id="frequency-input" placeholder="200000" type="text">
+              </div>
+              <button class="btn btn-primary float-right" id="submit">Submit</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- JavaScript -->
+  <script src="logic.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +121,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lilita+One" rel="stylesheet">
     <link rel="stylesheet" href="style.css"></link>
     <title>Train Schedule</title>
+    
 </head>
 <body style="background-color: pink">
     <div id="header" style="text-align: center; background-color: palevioletred">
@@ -22,7 +135,7 @@
         <div class="card" style="background-color: palevioletred" id="reviewsHeading">
             <div class="card-body" style="text-align: center">
                 <h2>
-                    Current Train Scheule:</h2>
+                    Current Train Schedule:</h2>
             </div>
         </div>
     </div>
@@ -40,14 +153,17 @@
     </thead>
     <tbody>
         <tr>
-            <td>5:00</td>
-            <td>Berkeley, CA</td>
-            <td>5 Mins</td>
-            <td>5:05</td>
-            <td>5 Mins</td>
+            <td id="trainTime"></td>
+            <td id="destination"></td>
+            <td id="frequency"></td>
+            <td id="nextArrival"></td>
+            <td id="minutesAway"></td>
         </tr>
     </tbody>
 </table>
+
+By using javascript, i want to append each of these empty row IDs and add the user's input
+when the submit button has been clicked
 
 <div class="row mt-3">
         <div class="col-12">
@@ -94,5 +210,13 @@
 </div>
 
 
+
+<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="logic.js">
+
 </body>
-</html>
+</html> 
