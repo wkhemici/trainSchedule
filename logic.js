@@ -63,47 +63,29 @@ $("#submit").on("click", function(event) {
   $("#destination-input").val("");
   $("#start-input").val("");
   $("#rate-input").val("");
-});
 
-//military time - better
+  //append new rows with newTrain info
+  
+  // 3. Create Firebase event for adding train info to the database and a row in the html when a user adds an entry
+  database.ref().on("child_added", function(childSnapshot) {
+    console.log(childSnapshot.val());
+  
+    // Store everything into a variable.
+    trainName = childSnapshot.val().trainName;
+    destination = childSnapshot.val().destination;
+    frequency = childSnapshot.val().frequency ;
+    arrival = childSnapshot.val().arrival;
 
+  
+  // Create the new row
+  var newRow = $("<tr>").append(
+    $("<th>").text(newTrain.trainName),
+    $("<th>").text(newTrain.destination),
+    $("<th>").text(newTrain.frequency),
+    $("<th>").text(newTrain.arrival),
+  );
 
-
-// //This returns info from our database. 
-
-//     var destination = "Berkeley";
-//     console.log(destination);
-       
-//     var tFrequency = 3;
-
-//     // Time is 3:30 AM
-//     var firstTime = "03:30";
-
-//     // First Time (pushed back 1 year to make sure it comes before current time)
-//     var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
-//     console.log(firstTimeConverted);
-
-//     // Current Time
-//     var currentTime = moment();
-//     console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
-
-//     // Difference between the times
-//     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-//     console.log("DIFFERENCE IN TIME: " + diffTime);
-
-//     // Time apart (remainder)
-//     var tRemainder = diffTime % tFrequency;
-//     console.log(tRemainder);
-
-//     // Minute Until Train
-//     var tMinutesTillTrain = tFrequency - tRemainder;
-//     console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
-
-//     // Next Train
-//     var nextTrain = moment().add(tMinutesTillTrain, "minutes");
-//     console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
-
-//         // // Log the data in the console as well
-//         // console.log("Wind Speed: " + response.wind.speed);
-//         // console.log("Humidity: " + response.main.humidity);
-//         // console.log("Temperature (F): " + response.main.temp);
+  // Append the new row to the table
+  $("#currentSchedule").append(newRow);
+})
+})
